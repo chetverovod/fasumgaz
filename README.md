@@ -18,26 +18,16 @@ $ conda activate py37
 ```
 $ conda deactivate
 ```
-## Install torch
-```
-$ conda activate py37
-does not works: $ sudo pip install torch
-does not works: $ conda install torch
-$ pip install torchvision 
-```
 
-## Install transformers
+## Install dependancies
 ```
-$ pip install transformers
-```
+$ pip install -r requirements.txt
 
-## Install streamlit
-```
-pip install streamlit
 ```
 
 ## Run web-application
 ```
 $ uvicorn main:app
 ```
-Web-page will be open automaticaly. 
+URL of service will be printed in command line.
+Use curl or postman for acces to service. 
