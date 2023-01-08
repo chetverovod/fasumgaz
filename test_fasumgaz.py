@@ -37,6 +37,6 @@ def test_read_text():
     f.close()
     print("reference_data = <", reference_text, ">" )
     assert response.status_code == 200
-    assert ( reference_text in json_data ) == True
+    assert ( reference_text.strip() in json_data ) == True
 
 
