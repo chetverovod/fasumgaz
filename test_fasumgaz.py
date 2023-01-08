@@ -21,12 +21,21 @@ def test_read_empty():
     print("json_data =<", json_data, ">" )
     assert response.status_code == 200
     assert json_data == 'Error: text is absent.'
-"""
-  
-  txt = item.text 
-  res = "Error."
-  if txt:
-     sum = summarize(model, tokenizer, txt)
-     res = sum 
-  return res    
-"""
+
+
+def test_read_text():
+    f = open("texts/text1.txt")
+    fd = f.read()
+    f.close()
+    response = client.post("/predict/",
+        json={ "text": fd }
+    )
+    json_data = response.json() 
+    print("json_data =<", json_data, ">" )
+    f = open("texts/answer1.txt")
+    fd = f.read()
+    f.close()
+    assert response.status_code == 200
+    assert json_data == fd
+
+
