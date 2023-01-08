@@ -13,6 +13,14 @@ def test_read_fasumgaz():
     assert response.json() == {"message":  "Fasumgaz application is online!"}
 
 
+def test_read_empty():
+    response = client.post("/predict/",
+        json={"text": ""}
+    )
+    json_data = response.json() 
+    print("json_data =<", json_data, ">" )
+    assert response.status_code == 200
+    assert json_data == 'Error: text is absent.'
 """
   
   txt = item.text 

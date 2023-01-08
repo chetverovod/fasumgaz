@@ -78,7 +78,7 @@ def predict(item: Item):
   """
   
   txt = item.text 
-  res = "Error."
+  res = "Error: text is absent."
   if txt:
      sum = summarize(model, tokenizer, txt)
      res = sum 
