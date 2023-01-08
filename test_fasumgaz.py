@@ -31,11 +31,11 @@ def test_read_text():
         json={ "text": fd }
     )
     json_data = response.json() 
-    print("json_data =<", json_data, ">" )
+    print("json_data = <", json_data, ">" )
     f = open("texts/answer1.txt")
     reference_text = f.read()
     f.close()
-    print("reference_data =<", reference_text, ">" )
+    print("reference_data = <", reference_text, ">" )
     assert response.status_code == 200
     assert ( reference_text in json_data ) == True
 
