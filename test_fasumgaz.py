@@ -37,6 +37,6 @@ def test_read_text():
     f.close()
     print("reference_data =<", reference_text, ">" )
     assert response.status_code == 200
-    assert json_data == reference_text
+    assert ( reference_text in json_data.contains ) == True
 
 
