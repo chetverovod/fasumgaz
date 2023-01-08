@@ -33,9 +33,10 @@ def test_read_text():
     json_data = response.json() 
     print("json_data =<", json_data, ">" )
     f = open("texts/answer1.txt")
-    fd = f.read()
+    reference_text = f.read()
     f.close()
+    print("reference_data =<", reference_text, ">" )
     assert response.status_code == 200
-    assert json_data == fd
+    assert json_data == reference_text
 
 
